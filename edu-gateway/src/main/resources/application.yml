@@ -1,0 +1,13 @@
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: gateway-auth_1
+          uri: http://localhost:8082
+          predicates:
+            - Path=/oauth/**
+        - id: gateway-resource-1
+          uri: http://localhost:8083
+          predicates:
+            - Path=/**
